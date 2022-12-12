@@ -1,0 +1,6 @@
+En la carpeta apuntes tienes los apuntes que puedes utilizar para realizar los ejercicios
+
+- Mueve Examen01-12.ipynb, diagrama.png y matriz.png a una misma carpeta y ejecuta jupyter notebook en esa carpeta
+- La entrega del exámen será un archivo comprimido de la forma APELLIDO_NOMBRE, que tendrá dos carpetas:
+	- Jupyter: estará el archivo *.ipynb junto con las imágenes que se hayan utilizado
+	- Garaje: estarán los archivos relacionados con el ejercicio 10

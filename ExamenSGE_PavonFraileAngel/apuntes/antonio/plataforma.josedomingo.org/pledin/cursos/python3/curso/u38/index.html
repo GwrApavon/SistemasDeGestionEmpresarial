@@ -1,0 +1,658 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u38/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+<head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Gestionar ficheros json - PLEDIN 3.0</title>
+<meta name="description" content="El módulo json nos permite gestionar ficheros con formato JSON (JavaScript Object Notation).">
+
+
+  <meta name="author" content="José Domingo Muñoz">
+  
+  <meta property="article:author" content="José Domingo Muñoz">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="PLEDIN 3.0">
+<meta property="og:title" content="Gestionar ficheros json">
+<meta property="og:url" content="index-2.html">
+
+
+  <meta property="og:description" content="El módulo json nos permite gestionar ficheros con formato JSON (JavaScript Object Notation).">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-18T13:52:18+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="index-2.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "José Domingo Muñoz",
+      "url": "https://plataforma.josedomingo.org/pledin/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="https://plataforma.josedomingo.org/pledin/feed.xml" type="application/atom+xml" rel="alternate" title="PLEDIN 3.0 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../../../assets/css/main.css">
+<link rel="preload" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../assets/icons/favicon-16x16.png">
+<link rel="manifest" href="https://plataforma.josedomingo.org/pledin/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="https://plataforma.josedomingo.org/pledin/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="https://plataforma.josedomingo.org/pledin/">
+          PLEDIN 3.0
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/blog">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://plataforma.josedomingo.org/">Plataforma</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://fp.josedomingo.org/">Módulos</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/about/">Presentación</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Curso Python3</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../../index-2.html">Índice</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Introducción</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u01/index.html">Introducción a python</a></li>
+          
+            <li><a href="../u02/index.html">Python2 us python3</a></li>
+          
+            <li><a href="../u03/index.html">Instalación de python3</a></li>
+          
+            <li><a href="../u04/index.html">Entornos de desarrollos y editores de texto</a></li>
+          
+            <li><a href="../u05/index.html">Mi primer programa en python3</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructura del lenguaje</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u06/index.html">Estructura del programa</a></li>
+          
+            <li><a href="../u07/index.html">Funciones y constantes predefinidas</a></li>
+          
+            <li><a href="../u08/index.html">Datos</a></li>
+          
+            <li><a href="../u09/index.html">Tipos de datos</a></li>
+          
+            <li><a href="../u10/index.html">Trabajando con variables</a></li>
+          
+            <li><a href="../u11/index.html">Entrada y salida estándar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos numéricos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u12/index.html">Tipo de datos numéricos</a></li>
+          
+            <li><a href="../u13/index.html">Tipo de dato booleanos</a></li>
+          
+            <li><a href="../u14/index.html">Ejercicios de programas sencillo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructuras de control</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u15/index.html">Estructura de control: Alternativas</a></li>
+          
+            <li><a href="../u16/index.html">Ejercicios de alternativas</a></li>
+          
+            <li><a href="../u17/index.html">Estructura de control: Repetitivas</a></li>
+          
+            <li><a href="../u18/index.html">Ejercicios de repetitivas</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos secuencia</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u19/index.html">Tipo de datos secuencia</a></li>
+          
+            <li><a href="../u20/index.html">Tipo de datos secuencia: listas</a></li>
+          
+            <li><a href="../u21/index.html">Métodos principales de listas</a></li>
+          
+            <li><a href="../u22/index.html">Ejercicios de listas</a></li>
+          
+            <li><a href="../u23/index.html">Operaciones avanzadas con secuencias</a></li>
+          
+            <li><a href="../u24/index.html">Tipo de datos secuencia: Tuplas</a></li>
+          
+            <li><a href="../u25/index.html">Tipo de datos secuencia: Rangos</a></li>
+          
+            <li><a href="../u26/index.html">Codificación de caracteres</a></li>
+          
+            <li><a href="../u27/index.html">Tipo de datos cadenas de caracteres</a></li>
+          
+            <li><a href="../u28/index.html">Métodos principales de cadenas</a></li>
+          
+            <li><a href="../u29/index.html">Ejercicios de cadenas</a></li>
+          
+            <li><a href="../u30/index.html">Tipo de datos binarios: bytes, bytearray</a></li>
+          
+            <li><a href="../u31/index.html">Tipo de datos conjuntos: set, frozenset</a></li>
+          
+            <li><a href="../u32/index.html">Tipo de datos iterador y generador</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos mapas</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u33/index.html">Tipo de datos mapa: diccionario</a></li>
+          
+            <li><a href="../u34/index.html">Métodos principales de diccionarios</a></li>
+          
+            <li><a href="../u35/index.html">Ejercicios de diccionarios</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Trabajar con ficheros</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u36/index.html">Lectura y escritura de ficheros de textos</a></li>
+          
+            <li><a href="../u37/index.html">Gestionar ficheros CSV</a></li>
+          
+            <li><a href="index.html" class="active">Gestionar ficheros json</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Errores y Excepciones</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u39/index.html">Excepciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos, paquetes y namespaces</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u40/index.html">Módulos y paquetes</a></li>
+          
+            <li><a href="../u41/index.html">Módulos estándares: módulos de sistema</a></li>
+          
+            <li><a href="../u42/index.html">Módulos estándares: módulos matemáticos</a></li>
+          
+            <li><a href="../u43/index.html">Módulos estándares: módulos de hora y fechas</a></li>
+          
+            <li><a href="../u44/index.html">Instalación de módulos</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u45/index.html">Introducción a las funciones</a></li>
+          
+            <li><a href="../u46/index.html">Conceptos avanzados sobre funciones</a></li>
+          
+            <li><a href="../u47/index.html">Tipos especiales de funciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u48/index.html">Ejercicios con funciones</a></li>
+          
+            <li><a href="../u49/index.html">Programación estructurada y modular: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u50/index.html">Programación orientada a objetos</a></li>
+          
+            <li><a href="../u51/index.html">Conceptos avanzados de programación orientada a objetos I</a></li>
+          
+            <li><a href="../u52/index.html">Conceptos avanzados de programación orientada a objetos II</a></li>
+          
+            <li><a href="../u53/index.html">Polimorfismo, herencia y delegación</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u54/index.html">Programación orientadas a objetos: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Gestionar ficheros json">
+    <meta itemprop="description" content="El módulo json nos permite gestionar ficheros con formato JSON (JavaScript Object Notation).">
+    <meta itemprop="datePublished" content="2022-11-18T13:52:18+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="index.html" class="u-url" itemprop="url">Gestionar ficheros json
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>El módulo <a href="https://docs.python.org/3.4/library/json.html">json</a> nos permite gestionar ficheros con formato <a href="http://json.org/">JSON (JavaScript Object Notation)</a>.</p>
+
+<p>La correspondecia entre JSON y Python la podemos resumir en la siguiente tabla:</p>
+<table>
+	<tr><td>JSON</td><td>Python</td></tr>
+	<tr><td>object</td><td>dict</td></tr>
+	<tr><td>array</td><td>list</td></tr>
+	<tr><td>string</td><td>str</td></tr>
+	<tr><td>number (int)</td><td>int</td></tr>
+	<tr><td>number (real)</td><td>float</td></tr>
+	<tr><td>true</td><td>True</td></tr>
+	<tr><td>false</td><td>False</td></tr>
+	<tr><td>null</td><td>None</td></tr>
+</table>
+
+<h2 id="leer-ficheros-json">Leer ficheros json</h2>
+
+<p>Desde una cadena de caracteres:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import json
+&gt;&gt;&gt; datos_json='{"nombre":"carlos","edad":23}'
+&gt;&gt;&gt; datos = json.loads(datos_json)
+&gt;&gt;&gt; type(datos)
+&lt;class 'dict'&gt;
+&gt;&gt;&gt; print(datos)
+{'nombre': 'carlos', 'edad': 23}
+</code></pre></div></div>
+
+<p>Desde un fichero:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; with open("ejemplo1.json") as fichero:
+...   datos=json.load(fichero)
+&gt;&gt;&gt; type(datos)
+&lt;class 'dict'&gt;
+&gt;&gt;&gt; datos
+{'bookstore': {'book': [{'_category': 'COOKING', 'price': '30.00', 'author': 'Giada De Laurentiis', 'title': {'__text': 'Everyday Italian', '_lang': 'en'}, 'year': '2005'}, {'_category': 'CHILDREN', 'price': '29.99', 'author': 'J K. Rowling', 'title': {'__text': 'Harry Potter', '_lang': 'en'}, 'year': '2005'}, {'_category': 'WEB', 'price': '49.99', 'author': ['James McGovern', 'Per Bothner', 'Kurt Cagle', 'James Linn', 'Vaidyanathan Nagarajan'], 'title': {'__text': 'XQuery Kick Start', '_lang': 'en'}, 'year': '2003'}, {'_category': 'WEB', 'price': '39.95', 'author': 'Erik T. Ray', 'title': {'__text': 'Learning XML', '_lang': 'en'}, 'year': '2003'}]}}
+</code></pre></div></div>
+
+<h2 id="escribir-ficheros-json">Escribir ficheros json</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; datos = {'isCat': True, 'miceCaught': 0, 'name': 'Zophie','felineIQ': None}
+&gt;&gt;&gt; fichero = open("ejemplo2.json","w")
+&gt;&gt;&gt; json.dump(datos,fichero)
+&gt;&gt;&gt; fichero.close()
+
+cat ejemplo2.json 
+{"miceCaught": 0, "name": "Zophie", "felineIQ": null, "isCat": true}
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-18T13:52:18+01:00">November 18, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="../u37/index.html" class="pagination--pager" title="Gestionar ficheros CSV
+">Previous</a>
+    
+    
+      <a href="../u39/index.html" class="pagination--pager" title="Excepciones
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="https://plataforma.josedomingo.org/pledin/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 José Domingo Muñoz. Powered by <a href="https://jekyllrb.com/" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="../../../../assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="../../../../assets/js/lunr/lunr.min.js"></script>
+<script src="../../../../assets/js/lunr/lunr-store.js"></script>
+<script src="../../../../assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u38/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+</html>

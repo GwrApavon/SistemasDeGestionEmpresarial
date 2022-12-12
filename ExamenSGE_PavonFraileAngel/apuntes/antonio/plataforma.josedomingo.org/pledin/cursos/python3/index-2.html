@@ -1,0 +1,1073 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:08:14 GMT -->
+<head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Curso: Introducción a python3 - PLEDIN 3.0</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="José Domingo Muñoz">
+  
+  <meta property="article:author" content="José Domingo Muñoz">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="PLEDIN 3.0">
+<meta property="og:title" content="Curso: Introducción a python3">
+<meta property="og:url" content="index.html">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-18T13:52:18+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="index.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "José Domingo Muñoz",
+      "url": "https://plataforma.josedomingo.org/pledin/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="https://plataforma.josedomingo.org/pledin/feed.xml" type="application/atom+xml" rel="alternate" title="PLEDIN 3.0 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="preload" href="../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="../../assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
+<link rel="manifest" href="https://plataforma.josedomingo.org/pledin/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="https://plataforma.josedomingo.org/pledin/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="https://plataforma.josedomingo.org/pledin/">
+          PLEDIN 3.0
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/blog">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://plataforma.josedomingo.org/">Plataforma</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://fp.josedomingo.org/">Módulos</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/about/">Presentación</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Curso Python3</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="index-2.html" class="active">Índice</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Introducción</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u01/index.html">Introducción a python</a></li>
+          
+            <li><a href="curso/u02/index.html">Python2 us python3</a></li>
+          
+            <li><a href="curso/u03/index.html">Instalación de python3</a></li>
+          
+            <li><a href="curso/u04/index.html">Entornos de desarrollos y editores de texto</a></li>
+          
+            <li><a href="curso/u05/index.html">Mi primer programa en python3</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructura del lenguaje</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u06/index.html">Estructura del programa</a></li>
+          
+            <li><a href="curso/u07/index.html">Funciones y constantes predefinidas</a></li>
+          
+            <li><a href="curso/u08/index.html">Datos</a></li>
+          
+            <li><a href="curso/u09/index.html">Tipos de datos</a></li>
+          
+            <li><a href="curso/u10/index.html">Trabajando con variables</a></li>
+          
+            <li><a href="curso/u11/index.html">Entrada y salida estándar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos numéricos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u12/index.html">Tipo de datos numéricos</a></li>
+          
+            <li><a href="curso/u13/index.html">Tipo de dato booleanos</a></li>
+          
+            <li><a href="curso/u14/index.html">Ejercicios de programas sencillo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructuras de control</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u15/index.html">Estructura de control: Alternativas</a></li>
+          
+            <li><a href="curso/u16/index.html">Ejercicios de alternativas</a></li>
+          
+            <li><a href="curso/u17/index.html">Estructura de control: Repetitivas</a></li>
+          
+            <li><a href="curso/u18/index.html">Ejercicios de repetitivas</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos secuencia</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u19/index.html">Tipo de datos secuencia</a></li>
+          
+            <li><a href="curso/u20/index.html">Tipo de datos secuencia: listas</a></li>
+          
+            <li><a href="curso/u21/index.html">Métodos principales de listas</a></li>
+          
+            <li><a href="curso/u22/index.html">Ejercicios de listas</a></li>
+          
+            <li><a href="curso/u23/index.html">Operaciones avanzadas con secuencias</a></li>
+          
+            <li><a href="curso/u24/index.html">Tipo de datos secuencia: Tuplas</a></li>
+          
+            <li><a href="curso/u25/index.html">Tipo de datos secuencia: Rangos</a></li>
+          
+            <li><a href="curso/u26/index.html">Codificación de caracteres</a></li>
+          
+            <li><a href="curso/u27/index.html">Tipo de datos cadenas de caracteres</a></li>
+          
+            <li><a href="curso/u28/index.html">Métodos principales de cadenas</a></li>
+          
+            <li><a href="curso/u29/index.html">Ejercicios de cadenas</a></li>
+          
+            <li><a href="curso/u30/index.html">Tipo de datos binarios: bytes, bytearray</a></li>
+          
+            <li><a href="curso/u31/index.html">Tipo de datos conjuntos: set, frozenset</a></li>
+          
+            <li><a href="curso/u32/index.html">Tipo de datos iterador y generador</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos mapas</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u33/index.html">Tipo de datos mapa: diccionario</a></li>
+          
+            <li><a href="curso/u34/index.html">Métodos principales de diccionarios</a></li>
+          
+            <li><a href="curso/u35/index.html">Ejercicios de diccionarios</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Trabajar con ficheros</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u36/index.html">Lectura y escritura de ficheros de textos</a></li>
+          
+            <li><a href="curso/u37/index.html">Gestionar ficheros CSV</a></li>
+          
+            <li><a href="curso/u38/index.html">Gestionar ficheros json</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Errores y Excepciones</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u39/index.html">Excepciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos, paquetes y namespaces</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u40/index.html">Módulos y paquetes</a></li>
+          
+            <li><a href="curso/u41/index.html">Módulos estándares: módulos de sistema</a></li>
+          
+            <li><a href="curso/u42/index.html">Módulos estándares: módulos matemáticos</a></li>
+          
+            <li><a href="curso/u43/index.html">Módulos estándares: módulos de hora y fechas</a></li>
+          
+            <li><a href="curso/u44/index.html">Instalación de módulos</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u45/index.html">Introducción a las funciones</a></li>
+          
+            <li><a href="curso/u46/index.html">Conceptos avanzados sobre funciones</a></li>
+          
+            <li><a href="curso/u47/index.html">Tipos especiales de funciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u48/index.html">Ejercicios con funciones</a></li>
+          
+            <li><a href="curso/u49/index.html">Programación estructurada y modular: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u50/index.html">Programación orientada a objetos</a></li>
+          
+            <li><a href="curso/u51/index.html">Conceptos avanzados de programación orientada a objetos I</a></li>
+          
+            <li><a href="curso/u52/index.html">Conceptos avanzados de programación orientada a objetos II</a></li>
+          
+            <li><a href="curso/u53/index.html">Polimorfismo, herencia y delegación</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="curso/u54/index.html">Programación orientadas a objetos: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Curso: Introducción a python3">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-11-18T13:52:18+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="index-2.html" class="u-url" itemprop="url">Curso: Introducción a python3
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><img src="img/python.png" alt="python3" /></p>
+
+<p>Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.</p>
+
+<p>Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma.</p>
+
+<p>Los siguientes contenidos forman parte de un curso que he impartido para <a href="https://openwebinars.net/cursos/python-3/">OpenWebinars</a> en mayo de 2017.</p>
+
+<p>Puedes obtener todo el contenido del curso en el repositorio <a href="https://github.com/josedom24/curso_python3">GitHub</a>.
+Todas las observaciones, mejoras y sugerencias son bienvenidas.</p>
+
+<ul>
+  <li><a href="presentacion.pdf">Presentación del curso</a></li>
+</ul>
+
+<h2 id="unidades">Unidades</h2>
+
+<p><strong>Introducción</strong></p>
+
+<ol>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u01">Introducción a python</a></li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u02">Python2 us python3</a></li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u03">Instalación de python3</a>
+    <ul>
+      <li>Instalación en linux debian/Ubuntu</li>
+      <li>Instalación en otras distribuciones linux</li>
+      <li>Instalación en Windows</li>
+      <li>Instalación en Mac</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u04">Entornos de desarrollos y editores de texto</a>
+    <ul>
+      <li>IDE python</li>
+      <li>Editores de textos</li>
+      <li>IDE us Editores de texto</li>
+      <li>Características de los editores de textos</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u05">Mi primer programa en python3</a>
+    <ul>
+      <li>Uso del interprete</li>
+      <li>Escribimos un programa</li>
+      <li>Ejecución de programas usando shebang</li>
+      <li>Guía de estilo</li>
+    </ul>
+
+    <p><strong>Estructura del lenguaje</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u06">Estructura del programa</a>
+    <ul>
+      <li>Estructura de programa</li>
+      <li>Los comentarios</li>
+      <li>Palabras reservadas</li>
+      <li>Ejemplo</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u07">Funciones y constantes predefinidas</a>
+    <ul>
+      <li>Funciones predefinidas</li>
+      <li>Algunos ejemplos de funciones</li>
+      <li>Constantes predefinidas: False,True,None, …</li>
+      <li>Ayuda, función help()</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u08">Datos</a>
+    <ul>
+      <li>Literales, variables y expresiones</li>
+      <li>Definición, borrado y ámbito de variables</li>
+      <li>Operadores. Precedencia de operadores</li>
+      <li>Función eval()</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u09">Tipos de datos</a>
+    <ul>
+      <li>Clasificación de tipos de datos</li>
+      <li>Función type()</li>
+      <li>Función isistance()</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u10">Trabajando con variables</a>
+    <ul>
+      <li>¿Qué es el tipado dinámico?</li>
+      <li>Objetos inmutables y mutables</li>
+      <li>Función id()</li>
+      <li>Operadores de identidad</li>
+      <li>Operadores de asignación</li>
+      <li>Asignación múltiple</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u11">Entrada y salida estándar</a>
+    <ul>
+      <li>Función input</li>
+      <li>Función print</li>
+      <li>Formateando cadenas de caracteres</li>
+      <li>Función format()</li>
+    </ul>
+
+    <p><strong>Tipos de datos numéricos</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u12">Tipo de datos numéricos</a>
+    <ul>
+      <li>Enteros</li>
+      <li>Reales</li>
+      <li>Complejos</li>
+      <li>Operadores aritmético</li>
+      <li>Funciones predefinidas que trabajan con números</li>
+      <li>Operadores a nivel de bit</li>
+      <li>Conversión de tipos</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u13">Tipo de dato booleanos</a>
+    <ul>
+      <li>Tipo booleano</li>
+      <li>¿Qué valores se interpretan como FALSO?</li>
+      <li>Operadores booleanos</li>
+      <li>Operadores de comparación</li>
+      <li>Funciones all() y any()</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u14">Ejercicios de programas sencillos</a></p>
+
+    <p><strong>Estructuras de control</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u15">Estructura de control: Alternativas</a>
+    <ul>
+      <li>Alternativas simples</li>
+      <li>Alternativas dobles</li>
+      <li>Alternativas múltiples</li>
+      <li>Expresión reducida del if</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u16">Ejercicios de alternativas</a></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u17">Estructura de control: Repetitivas</a>
+    <ul>
+      <li>while</li>
+      <li>for</li>
+      <li>Instrucciones break, continue y pass</li>
+      <li>Recorriendo varias secuencias. Función zip()</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u18">Ejercicios de repetitivas</a></p>
+
+    <p><strong>Tipos de datos secuencia</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u19">Tipo de datos secuencia</a>
+    <ul>
+      <li>Enumeración de los tipos secuencias</li>
+      <li>Características principales de las secuencias</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u20">Tipo de datos secuencia: listas</a>
+    <ul>
+      <li>Construcción de una lista</li>
+      <li>Operaciones básicas con listas</li>
+      <li>Las listas son mutables. ¿Cómo se copian las listas?</li>
+      <li>Listas multidimensionales</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u21">Métodos principales de listas</a>
+    <ul>
+      <li>Métodos de inserción: append, extend, insert</li>
+      <li>Métodos de eliminación: pop, remove</li>
+      <li>Métodos de ordenación: reverse, sort,</li>
+      <li>Métodos de búsqueda: count, index</li>
+      <li>Método de copia: copy</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u22">Ejercicios de listas</a></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u23">Operaciones avanzadas con secuencias</a>
+    <ul>
+      <li>Función map</li>
+      <li>Función filter</li>
+      <li>Función reduce</li>
+      <li>list comprehension</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u24">Tipo de datos secuencia: Tuplas</a>
+    <ul>
+      <li>Construcción de una tupla</li>
+      <li>Empaquetado y desempaquetado de tuplas</li>
+      <li>Operaciones básicas con tuplas</li>
+      <li>Las tuplas son inmutables</li>
+      <li>Métodos principales</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u25">Tipo de datos secuencia: Rangos</a>
+    <ul>
+      <li>Definición de un rango. Constructor range</li>
+      <li>Recorrido de un rango</li>
+      <li>Operaciones básicas con range</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u26">Codificación de caracteres</a>
+    <ul>
+      <li>Introducción a la codificación de caracteres</li>
+      <li>La codificación de caracteres en python3</li>
+      <li>Funciones chr() y ord()</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u27">Tipo de datos cadenas de caracteres</a>
+    <ul>
+      <li>Definición de cadenas. Constructor str</li>
+      <li>Operaciones básicas con listas</li>
+      <li>Las cadenas son inmutables</li>
+      <li>Comparación de cadenas</li>
+      <li>Funciones repr, ascii, bin</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u28">Métodos principales de cadenas</a>
+    <ul>
+      <li>Métodos de formato</li>
+      <li>Métodos de búsqueda</li>
+      <li>Métodos de validación</li>
+      <li>Métodos de sustitución</li>
+      <li>Métodos de unión y división</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u29">Ejercicios de cadenas</a></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u30">Tipo de datos binarios: bytes, bytearray</a>
+    <ul>
+      <li>Definición de bytes. Constructor bytes</li>
+      <li>Definición de bytearray. Constructor bytearray</li>
+      <li>Operaciones básicas con bytes y bytearray</li>
+      <li>Los bytes son inmutables, los bytearray son inmutables</li>
+      <li>Métodos de bytes y bytearray</li>
+      <li>Métodos encode(), decode()</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u31">Tipo de datos conjuntos: set, frozenset</a>
+    <ul>
+      <li>Definición de conjuntos. Constructor set</li>
+      <li>Definición de frozenset. Constructor frozenset</li>
+      <li>Operaciones básicas con set y frozenset</li>
+      <li>Los set son inmutables, los frozenset son mutables</li>
+      <li>Métodos principales</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u32">Tipo de datos iterador y generador</a>
+    <ul>
+      <li>Iteradores</li>
+      <li>Función next(), reversed()</li>
+      <li>Generadores</li>
+    </ul>
+
+    <p><strong>Tipos de datos mapas</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u33">Tipo de datos mapa: diccionario</a>
+    <ul>
+      <li>Definición de diccionarios. Constructor dict</li>
+      <li>Operaciones básicas con diccionarios</li>
+      <li>Los diccionarios son tipos mutables</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u34">Métodos principales de diccionarios</a>
+    <ul>
+      <li>Métodos de eliminación: clear</li>
+      <li>Métodos de agregado y creación: copy, dict.fromkeys, update, setdefault</li>
+      <li>Métodos de retorno: get, pop, popitem, items, keys, values</li>
+      <li>El tipo de datos dictviews</li>
+      <li>Recorridos de diccionarios</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u35">Ejercicios de diccionarios</a></p>
+
+    <p><strong>Trabajar con ficheros</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u36">Lectura y escritura de ficheros de textos</a>
+    <ul>
+      <li>Función open()</li>
+      <li>Modos de acceso</li>
+      <li>Codificación de caracteres</li>
+      <li>Objeto fichero</li>
+      <li>Metodos principales</li>
+      <li>Recorrido de ficheros</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u37">Gestionar ficheros CSV</a>
+    <ul>
+      <li>Módulo csv</li>
+      <li>Leer ficheros CSV</li>
+      <li>Escribir ficheros CSV</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u38">Gestionar ficheros json</a>
+    <ul>
+      <li>Módulo json</li>
+      <li>Leer ficheros json</li>
+      <li>Escribir ficheros json</li>
+    </ul>
+
+    <p><strong>Errores y Excepciones</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u39">Excepciones</a>
+    <ul>
+      <li>Errores sintácticos y errores de ejecución</li>
+      <li>Manejando excepciones. try, except, else, finally</li>
+      <li>Obteniendo información de las excpciones</li>
+      <li>Propagando excepciones. raise</li>
+    </ul>
+
+    <p><strong>Módulos, paquetes y namespaces</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u40">Módulos y paquetes</a>
+    <ul>
+      <li>Módulos, paquetes</li>
+      <li>Ejecutando módulos como scripts</li>
+      <li>Importando módulos: import</li>
+      <li>Namespace y alias</li>
+      <li>Importando elementos de un módulo: from…import</li>
+      <li>Importando módulos desde paquetes</li>
+      <li>Función dir()</li>
+      <li>¿Donde se encuentran los módulos?</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u41">Módulos estándares: módulos de sistema</a>
+    <ul>
+      <li>Módulo os</li>
+      <li>Ejecutar comandos del sistema operativo. Módulo subprocess</li>
+      <li>Módulo shutils</li>
+      <li>Módulos sys</li>
+      <li>Ejecución de scripts con argumentos</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u42">Módulos estándares: módulos matemáticos</a>
+    <ul>
+      <li>Módulo math</li>
+      <li>Módulo fractions</li>
+      <li>Módulo statistics</li>
+      <li>Módulo random</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u43">Módulos estándares: módulos de hora y fechas</a>
+    <ul>
+      <li>Módulo time</li>
+      <li>Módulo datetime</li>
+      <li>Módulo calendar</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u44">Instalación de módulos</a>
+    <ul>
+      <li>PyPI y pip</li>
+      <li>Instalación de módulos python</li>
+      <li>Creando entornos virtuales con <code class="language-plaintext highlighter-rouge">virtualenv</code></li>
+      <li>Creando entornos virtuales con <code class="language-plaintext highlighter-rouge">venv</code></li>
+      <li>Instalando paquetes en nuestro entorno virtual</li>
+    </ul>
+
+    <p><strong>Programación estructurada y modular</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u45">Introducción a las funciones</a>
+    <ul>
+      <li>Introducción a la programación estructurada y modular</li>
+      <li>Definición de funciones</li>
+      <li>Ámbito de variables. Sentencia global</li>
+      <li>Parámetros formales y reales</li>
+      <li>Paso de parámetro por valor o por referencia</li>
+      <li>Llamadas a una función</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u46">Conceptos avanzados sobre funciones</a>
+    <ul>
+      <li>Tipos de argumentos: posicionales o keyword</li>
+      <li>Parámetro *</li>
+      <li>Argumentos arbitrarios (*args y **kwargs)</li>
+      <li>Desempaquetar argumentos: pasar listas y diccionarios</li>
+      <li>Devolver múltiples resultados</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u47">Tipos especiales de funciones</a>
+    <ul>
+      <li>Funciones recursivas</li>
+      <li>Funciones lambda</li>
+      <li>Decoradores</li>
+      <li>Funciones generadoras</li>
+    </ul>
+
+    <p><strong>Ejercicios programación estructurada y modular</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u48">Ejercicios con funciones</a></li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u49">Programación estructurada y modular: Ejemplo completo</a></p>
+
+    <p><strong>Programación orientada a objetos</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u50">Programación orientada a objetos</a>
+    <ul>
+      <li>Introducción a la Programación Orientada a Objetos</li>
+      <li>Definición de clase, objeto, atributos y métodos</li>
+      <li>Atributos de objetos</li>
+      <li>Método constructor <strong>init</strong></li>
+      <li>Definiendo métodos. El parámetro self</li>
+      <li>Definición de objetos</li>
+    </ul>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u51">Conceptos avanzados de programación orientada a objetos I</a>
+    <ul>
+      <li>Atributos de clase (estáticas)</li>
+      <li>Atributos privados y ocultos</li>
+      <li>Métodos estáticos</li>
+      <li>Métodos de clase (estáticos)</li>
+      <li>Funciones getattr,setattr,delattr,hasattr</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u52">Conceptos avanzados de programación orientada a objetos II</a></p>
+
+    <ul>
+      <li>Propiedades: getters, setters, deleter</li>
+      <li>Representación de objetos __str__ y __repr__</li>
+      <li>Comparación de objetos __eq__</li>
+      <li>Operar con objetos __add__ y __sub__</li>
+      <li>Más métodos especiales</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u53">Polimorfismo, herencia y delegación</a></p>
+
+    <ul>
+      <li>Polimorfismo</li>
+      <li>Herencia</li>
+      <li>La función super()</li>
+      <li>Herencia múltiple</li>
+      <li>Funciones issubclass() y isinstance()</li>
+      <li>Delegación</li>
+    </ul>
+
+    <p><strong>Ejercicios programación orientada a objetos</strong></p>
+  </li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/curso/u54">Programación orientadas a objetos: Ejemplo completo</a></li>
+</ol>
+
+<h2 id="vídeos">Vídeos</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <iframe src="https://www.youtube.com/embed/9r2wF93vOkM" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+      
+      <td>
+        <iframe src="https://www.youtube.com/embed/ZznSGjAutQU" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <iframe src="https://www.youtube.com/embed/9MuCDs-6dY8" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+      
+      <td>
+        <iframe src="https://www.youtube.com/embed/z009bxh_cTk" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-18T13:52:18+01:00">November 18, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="curso/u01/index.html" class="pagination--pager" title="Introducción a python
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="https://plataforma.josedomingo.org/pledin/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 José Domingo Muñoz. Powered by <a href="https://jekyllrb.com/" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="../../assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="../../assets/js/lunr/lunr.min.js"></script>
+<script src="../../assets/js/lunr/lunr-store.js"></script>
+<script src="../../assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:08:14 GMT -->
+</html>

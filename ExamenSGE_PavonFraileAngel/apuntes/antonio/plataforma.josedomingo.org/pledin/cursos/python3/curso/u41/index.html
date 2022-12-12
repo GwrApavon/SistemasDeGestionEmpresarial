@@ -1,0 +1,891 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u41/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+<head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Módulos estándares: módulos de sistema - PLEDIN 3.0</title>
+<meta name="description" content="Python tiene sus propios módulos, los cuales forman parte de su librería de módulos estándar, que también pueden ser importados. En esta unidad vamos a estudiar las funciones porincipales de módulos realacionados con el sistema operativo.">
+
+
+  <meta name="author" content="José Domingo Muñoz">
+  
+  <meta property="article:author" content="José Domingo Muñoz">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="PLEDIN 3.0">
+<meta property="og:title" content="Módulos estándares: módulos de sistema">
+<meta property="og:url" content="index-2.html">
+
+
+  <meta property="og:description" content="Python tiene sus propios módulos, los cuales forman parte de su librería de módulos estándar, que también pueden ser importados. En esta unidad vamos a estudiar las funciones porincipales de módulos realacionados con el sistema operativo.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-18T13:52:18+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="index-2.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "José Domingo Muñoz",
+      "url": "https://plataforma.josedomingo.org/pledin/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="https://plataforma.josedomingo.org/pledin/feed.xml" type="application/atom+xml" rel="alternate" title="PLEDIN 3.0 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../../../assets/css/main.css">
+<link rel="preload" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../assets/icons/favicon-16x16.png">
+<link rel="manifest" href="https://plataforma.josedomingo.org/pledin/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="https://plataforma.josedomingo.org/pledin/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="https://plataforma.josedomingo.org/pledin/">
+          PLEDIN 3.0
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/blog">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://plataforma.josedomingo.org/">Plataforma</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://fp.josedomingo.org/">Módulos</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/about/">Presentación</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Curso Python3</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../../index-2.html">Índice</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Introducción</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u01/index.html">Introducción a python</a></li>
+          
+            <li><a href="../u02/index.html">Python2 us python3</a></li>
+          
+            <li><a href="../u03/index.html">Instalación de python3</a></li>
+          
+            <li><a href="../u04/index.html">Entornos de desarrollos y editores de texto</a></li>
+          
+            <li><a href="../u05/index.html">Mi primer programa en python3</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructura del lenguaje</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u06/index.html">Estructura del programa</a></li>
+          
+            <li><a href="../u07/index.html">Funciones y constantes predefinidas</a></li>
+          
+            <li><a href="../u08/index.html">Datos</a></li>
+          
+            <li><a href="../u09/index.html">Tipos de datos</a></li>
+          
+            <li><a href="../u10/index.html">Trabajando con variables</a></li>
+          
+            <li><a href="../u11/index.html">Entrada y salida estándar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos numéricos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u12/index.html">Tipo de datos numéricos</a></li>
+          
+            <li><a href="../u13/index.html">Tipo de dato booleanos</a></li>
+          
+            <li><a href="../u14/index.html">Ejercicios de programas sencillo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructuras de control</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u15/index.html">Estructura de control: Alternativas</a></li>
+          
+            <li><a href="../u16/index.html">Ejercicios de alternativas</a></li>
+          
+            <li><a href="../u17/index.html">Estructura de control: Repetitivas</a></li>
+          
+            <li><a href="../u18/index.html">Ejercicios de repetitivas</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos secuencia</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u19/index.html">Tipo de datos secuencia</a></li>
+          
+            <li><a href="../u20/index.html">Tipo de datos secuencia: listas</a></li>
+          
+            <li><a href="../u21/index.html">Métodos principales de listas</a></li>
+          
+            <li><a href="../u22/index.html">Ejercicios de listas</a></li>
+          
+            <li><a href="../u23/index.html">Operaciones avanzadas con secuencias</a></li>
+          
+            <li><a href="../u24/index.html">Tipo de datos secuencia: Tuplas</a></li>
+          
+            <li><a href="../u25/index.html">Tipo de datos secuencia: Rangos</a></li>
+          
+            <li><a href="../u26/index.html">Codificación de caracteres</a></li>
+          
+            <li><a href="../u27/index.html">Tipo de datos cadenas de caracteres</a></li>
+          
+            <li><a href="../u28/index.html">Métodos principales de cadenas</a></li>
+          
+            <li><a href="../u29/index.html">Ejercicios de cadenas</a></li>
+          
+            <li><a href="../u30/index.html">Tipo de datos binarios: bytes, bytearray</a></li>
+          
+            <li><a href="../u31/index.html">Tipo de datos conjuntos: set, frozenset</a></li>
+          
+            <li><a href="../u32/index.html">Tipo de datos iterador y generador</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos mapas</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u33/index.html">Tipo de datos mapa: diccionario</a></li>
+          
+            <li><a href="../u34/index.html">Métodos principales de diccionarios</a></li>
+          
+            <li><a href="../u35/index.html">Ejercicios de diccionarios</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Trabajar con ficheros</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u36/index.html">Lectura y escritura de ficheros de textos</a></li>
+          
+            <li><a href="../u37/index.html">Gestionar ficheros CSV</a></li>
+          
+            <li><a href="../u38/index.html">Gestionar ficheros json</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Errores y Excepciones</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u39/index.html">Excepciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos, paquetes y namespaces</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u40/index.html">Módulos y paquetes</a></li>
+          
+            <li><a href="index.html" class="active">Módulos estándares: módulos de sistema</a></li>
+          
+            <li><a href="../u42/index.html">Módulos estándares: módulos matemáticos</a></li>
+          
+            <li><a href="../u43/index.html">Módulos estándares: módulos de hora y fechas</a></li>
+          
+            <li><a href="../u44/index.html">Instalación de módulos</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u45/index.html">Introducción a las funciones</a></li>
+          
+            <li><a href="../u46/index.html">Conceptos avanzados sobre funciones</a></li>
+          
+            <li><a href="../u47/index.html">Tipos especiales de funciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u48/index.html">Ejercicios con funciones</a></li>
+          
+            <li><a href="../u49/index.html">Programación estructurada y modular: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u50/index.html">Programación orientada a objetos</a></li>
+          
+            <li><a href="../u51/index.html">Conceptos avanzados de programación orientada a objetos I</a></li>
+          
+            <li><a href="../u52/index.html">Conceptos avanzados de programación orientada a objetos II</a></li>
+          
+            <li><a href="../u53/index.html">Polimorfismo, herencia y delegación</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u54/index.html">Programación orientadas a objetos: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Módulos estándares: módulos de sistema">
+    <meta itemprop="description" content="Python tiene sus propios módulos, los cuales forman parte de su librería de módulos estándar, que también pueden ser importados. En esta unidad vamos a estudiar las funciones porincipales de módulos realacionados con el sistema operativo.">
+    <meta itemprop="datePublished" content="2022-11-18T13:52:18+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="index.html" class="u-url" itemprop="url">Módulos estándares: módulos de sistema
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Python tiene sus propios módulos, los cuales forman parte de su librería de módulos estándar, que también pueden ser importados. En esta unidad vamos a estudiar las funciones porincipales de módulos realacionados con el sistema operativo.</p>
+
+<h2 id="módulo-os">Módulo os</h2>
+
+<p>El módulo <a href="https://docs.python.org/3.4/library/os.html#module-os">os</a> nos permite acceder a funcionalidades dependientes del Sistema Operativo. Sobre todo, aquellas que nos refieren información sobre el entorno del mismo y nos permiten manipular la estructura de directorios.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Descripción</th>
+  <th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Saber si se puede acceder a un archivo o directorio</td>
+  <td><code>os.access(path, modo_de_acceso)</code></td>
+</tr>
+<tr>
+  <td>Conocer el directorio actual</td>
+  <td><code>os.getcwd()</code></td>
+</tr>
+<tr>
+  <td>Cambiar de directorio de trabajo</td>
+  <td><code>os.chdir(nuevo_path)</code></td>
+</tr>
+<tr>
+  <td>Cambiar al directorio de trabajo raíz</td>
+  <td><code>os.chroot()</code></td>
+</tr>
+<tr>
+  <td>Cambiar los permisos de un archivo o directorio</td>
+  <td><code>os.chmod(path, permisos)</code></td>
+</tr>
+<tr>
+  <td>Cambiar el propietario de un archivo o directorio</td>
+  <td><code>os.chown(path, permisos)</code></td>
+</tr>
+<tr>
+  <td>Crear un directorio</td>
+  <td><code>os.mkdir(path[, modo])</code></td>
+</tr>
+<tr>
+  <td>Crear directorios recursivamente</td>
+  <td><code>os.mkdirs(path[, modo])</code></td>
+</tr>
+<tr>
+  <td>Eliminar un archivo</td>
+  <td><code>os.remove(path)</code></td>
+</tr>
+<tr>
+  <td>Eliminar un directorio</td>
+  <td><code>os.rmdir(path)</code></td>
+</tr>
+<tr>
+  <td>Eliminar directorios recursivamente</td>
+  <td><code>os.removedirs(path)</code></td>
+</tr>
+<tr>
+  <td>Renombrar un archivo</td>
+  <td><code>os.rename(actual, nuevo)</code></td>
+</tr>
+<tr>
+  <td>Crear un enlace simbólico</td>
+  <td><code>os.symlink(path, nombre_destino)</code></td>
+</tr>
+</tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.getcwd()
+'/home/jose/github/curso_python3/curso/u40'
+&gt;&gt;&gt; os.chdir("..")
+&gt;&gt;&gt; os.getcwd()
+'/home/jose/github/curso_python3/curso'
+</code></pre></div></div>
+
+<p>El módulo os también nos provee del submódulo path (os.path) el cual nos permite acceder a ciertas funcionalidades relacionadas con los nombres de las rutas de archivos y directorios.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Descripción</th>
+  <th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ruta absoluta</td>
+  <td><code>os.path.abspath(path)</code></td>
+</tr>
+<tr>
+  <td>Directorio base</td>
+  <td><code>os.path.basename(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si un directorio existe</td>
+  <td><code>os.path.exists(path)</code></td>
+</tr>
+<tr>
+  <td>Conocer último acceso a un directorio</td>
+  <td><code>os.path.getatime(path)</code></td>
+</tr>
+<tr>
+  <td>Conocer tamaño del directorio</td>
+  <td><code>os.path.getsize(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es absoluta</td>
+  <td><code>os.path.isabs(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es un archivo</td>
+  <td><code>os.path.isfile(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es un directorio</td>
+  <td><code>os.path.isdir(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es un enlace simbólico</td>
+  <td><code>os.path.islink(path)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es un punto de montaje</td>
+  <td><code>os.path.ismount(path)</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ejecutar-comandos-del-sistema-operativo-módulo-subprocess">Ejecutar comandos del sistema operativo. Módulo subprocess</h3>
+
+<p>Con la función <code class="language-plaintext highlighter-rouge">system()</code> del módulo <code class="language-plaintext highlighter-rouge">os</code> nos permite ejecutar comandos del sistema operativo.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; os.system("ls")
+curso  modelo.odp  README.md
+0
+</code></pre></div></div>
+
+<p>La función nos devuelve un código para indicar si la instrucción se ha ejecutado con éxito.</p>
+
+<p>Tenemos otra forma de ejecutar comandos del sistema operativo que nos da más funcionalidad, por ejemplo nos permite guardar la salida del comando en una variable. Para ello podemos usar el módulo <a href="https://docs.python.org/3.4/library/subprocess.html">subprocess</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import subprocess
+&gt;&gt;&gt; subprocess.call("ls")
+curso  modelo.odp  README.md
+0
+
+&gt;&gt;&gt; salida=subprocess.check_output("ls")
+&gt;&gt;&gt; print(salida.decode())
+curso
+modelo.odp
+README.md
+
+&gt;&gt;&gt; salida=subprocess.check_output(["df","-h"])
+
+&gt;&gt;&gt; salida = subprocess.Popen(["df","-h"], stdout=subprocess.PIPE)
+&gt;&gt;&gt; salida.communicate()[0]
+</code></pre></div></div>
+
+<h2 id="módulo-shutil">Módulo shutil</h2>
+
+<p>El módulo <a href="https://docs.python.org/3.4/library/shutil.html#module-shutil">shutil</a> de funciones para realizar operaciones de alto nivel con archivos y directorios. Dentro de las operaciones que se pueden realizar está copiar, mover y borrar archivos y directorios; y copiar los permisos y el estado de los archivos.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Descripción</th>
+  <th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Copia un fichero complero o parte</td>
+  <td><code>shutil.copyfileobj(fsrc, fdst[, length])</code></td>
+</tr>
+<tr>
+  <td>Copia el contenido completo (sin metadatos) de un archivo</td>
+  <td><code>shutil.copyfile(src, dst, *, follow_symlinks=True)</code></td>
+</tr>
+<tr>
+  <td>copia los permisos de un archivo origen a uno destino</td>
+  <td><code>shutil.copymode(src, dst, *, follow_symlinks=True)</code></td>
+</tr>
+<tr>
+  <td>Copia los permisos, la fecha-hora del último acceso, la fecha-hora de la última modificación y los atributos de un archivo origen a un archivo destino</td>
+  <td><code>shutil.copystat(src, dst, *, follow_symlinks=True)</code></td>
+</tr>
+<tr>
+  <td>Copia un archivo (sólo datos y permisos)</td>
+  <td><code>shutil.copy(src, dst, *, follow_symlinks=True)</code></td>
+</tr>
+<tr>
+  <td>Copia archivos (datos, permisos y metadatos) </td>
+  <td><code>shutil.move(src, dst, copy_function=copy2)</code></td>
+</tr>
+<tr>
+  <td>Obtiene información del espacio total, usado y libre, en bytes </td>
+  <td><code>shutil.disk_usage(path)</code></td>
+</tr>
+<tr>
+  <td>Obtener la ruta de un archivo ejecutable </td>
+  <td><code>shutil.chown(path, user=None, group=None)</code></td>
+</tr>
+<tr>
+  <td>Saber si una ruta es un enlace simbólico</td>
+  <td><code>shutil.which(cmd, mode=os.F_OK | os.X_OK, path=None)</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="módulos-sys">Módulos sys</h2>
+
+<p>El módulo <a href="https://docs.python.org/3.4/library/sys.html#module-sys">sys</a> es el encargado de proveer variables y funcionalidades, directamente relacionadas con el intérprete.</p>
+
+<p>Algunas variables definidas en el módulo:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>sys.argv</code></td>
+  <td>Retorna una lista con todos los argumentos pasados por línea de comandos. Al ejecutar <code>python modulo.py arg1 arg2</code>, retornará una lista: <code>['modulo.py', 'arg1', 'arg2']</code></td>
+</tr>
+<tr>
+  <td><code>sys.executable</code></td>
+  <td>Retorna el path absoluto del binario ejecutable del intérprete de Python</td>
+</tr>
+<tr>
+  <td><code>sys.platform</code></td>
+  <td>Retorna la plataforma sobre la cuál se está ejecutando el intérprete</td>
+</tr>
+<tr>
+  <td><code>sys.version</code></td>
+  <td>Retorna el número de versión de Python con información adicional</td>
+</tr>
+</tbody>
+</table>
+
+<p>Y algunos métodos:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Método</th>
+  <th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>sys.exit()</code></td>
+  <td>Forzar la salida del intérprete</td>
+</tr>
+<tr>
+  <td><code>sys.getdefaultencoding()</code></td>
+  <td>Retorna la codificación de caracteres por defecto</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ejecución-de-scripts-con-argumentos">Ejecución de scripts con argumentos</h2>
+
+<p>Podemos enviar información (argumentos) a un programa cuando se ejecuta como un script, por ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env python	
+import sys
+print("Has instroducido",len(sys.argv),"argumento")
+suma=0
+for i in range(1,len(sys.argv)):
+	suma=suma+int(sys.argv[i])
+print("La suma es ",suma)
+
+$  python3 sumar.py 3 4 5
+Has introducido 4 argumento
+La suma es  12
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-18T13:52:18+01:00">November 18, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="../u40/index.html" class="pagination--pager" title="Módulos y paquetes
+">Previous</a>
+    
+    
+      <a href="../u42/index.html" class="pagination--pager" title="Módulos estándares: módulos matemáticos
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="https://plataforma.josedomingo.org/pledin/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 José Domingo Muñoz. Powered by <a href="https://jekyllrb.com/" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="../../../../assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="../../../../assets/js/lunr/lunr.min.js"></script>
+<script src="../../../../assets/js/lunr/lunr-store.js"></script>
+<script src="../../../../assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u41/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+</html>

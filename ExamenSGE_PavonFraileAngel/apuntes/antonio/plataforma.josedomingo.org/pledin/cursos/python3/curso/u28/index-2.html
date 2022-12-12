@@ -1,0 +1,764 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u28/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+<head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Métodos principales de cadenas - PLEDIN 3.0</title>
+<meta name="description" content="Cuando creamos una cadena de caracteres estamos creando un objeto de la clase str, que tiene definido un conjunto de métodos:">
+
+
+  <meta name="author" content="José Domingo Muñoz">
+  
+  <meta property="article:author" content="José Domingo Muñoz">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="PLEDIN 3.0">
+<meta property="og:title" content="Métodos principales de cadenas">
+<meta property="og:url" content="index-2.html">
+
+
+  <meta property="og:description" content="Cuando creamos una cadena de caracteres estamos creando un objeto de la clase str, que tiene definido un conjunto de métodos:">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-18T13:52:18+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="index-2.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "José Domingo Muñoz",
+      "url": "https://plataforma.josedomingo.org/pledin/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="https://plataforma.josedomingo.org/pledin/feed.xml" type="application/atom+xml" rel="alternate" title="PLEDIN 3.0 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../../../assets/css/main.css">
+<link rel="preload" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../../../../../../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%405/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../../assets/icons/favicon-16x16.png">
+<link rel="manifest" href="https://plataforma.josedomingo.org/pledin/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="https://plataforma.josedomingo.org/pledin/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="https://plataforma.josedomingo.org/pledin/">
+          PLEDIN 3.0
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/blog">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://plataforma.josedomingo.org/">Plataforma</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://fp.josedomingo.org/">Módulos</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://www.josedomingo.org/pledin/about/">Presentación</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Curso Python3</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../../index-2.html">Índice</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Introducción</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u01/index.html">Introducción a python</a></li>
+          
+            <li><a href="../u02/index.html">Python2 us python3</a></li>
+          
+            <li><a href="../u03/index.html">Instalación de python3</a></li>
+          
+            <li><a href="../u04/index.html">Entornos de desarrollos y editores de texto</a></li>
+          
+            <li><a href="../u05/index.html">Mi primer programa en python3</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructura del lenguaje</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u06/index.html">Estructura del programa</a></li>
+          
+            <li><a href="../u07/index.html">Funciones y constantes predefinidas</a></li>
+          
+            <li><a href="../u08/index.html">Datos</a></li>
+          
+            <li><a href="../u09/index.html">Tipos de datos</a></li>
+          
+            <li><a href="../u10/index.html">Trabajando con variables</a></li>
+          
+            <li><a href="../u11/index.html">Entrada y salida estándar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos numéricos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u12/index.html">Tipo de datos numéricos</a></li>
+          
+            <li><a href="../u13/index.html">Tipo de dato booleanos</a></li>
+          
+            <li><a href="../u14/index.html">Ejercicios de programas sencillo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Estructuras de control</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u15/index.html">Estructura de control: Alternativas</a></li>
+          
+            <li><a href="../u16/index.html">Ejercicios de alternativas</a></li>
+          
+            <li><a href="../u17/index.html">Estructura de control: Repetitivas</a></li>
+          
+            <li><a href="../u18/index.html">Ejercicios de repetitivas</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos secuencia</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u19/index.html">Tipo de datos secuencia</a></li>
+          
+            <li><a href="../u20/index.html">Tipo de datos secuencia: listas</a></li>
+          
+            <li><a href="../u21/index.html">Métodos principales de listas</a></li>
+          
+            <li><a href="../u22/index.html">Ejercicios de listas</a></li>
+          
+            <li><a href="../u23/index.html">Operaciones avanzadas con secuencias</a></li>
+          
+            <li><a href="../u24/index.html">Tipo de datos secuencia: Tuplas</a></li>
+          
+            <li><a href="../u25/index.html">Tipo de datos secuencia: Rangos</a></li>
+          
+            <li><a href="../u26/index.html">Codificación de caracteres</a></li>
+          
+            <li><a href="../u27/index.html">Tipo de datos cadenas de caracteres</a></li>
+          
+            <li><a href="index.html" class="active">Métodos principales de cadenas</a></li>
+          
+            <li><a href="../u29/index.html">Ejercicios de cadenas</a></li>
+          
+            <li><a href="../u30/index.html">Tipo de datos binarios: bytes, bytearray</a></li>
+          
+            <li><a href="../u31/index.html">Tipo de datos conjuntos: set, frozenset</a></li>
+          
+            <li><a href="../u32/index.html">Tipo de datos iterador y generador</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Tipos de datos mapas</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u33/index.html">Tipo de datos mapa: diccionario</a></li>
+          
+            <li><a href="../u34/index.html">Métodos principales de diccionarios</a></li>
+          
+            <li><a href="../u35/index.html">Ejercicios de diccionarios</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Trabajar con ficheros</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u36/index.html">Lectura y escritura de ficheros de textos</a></li>
+          
+            <li><a href="../u37/index.html">Gestionar ficheros CSV</a></li>
+          
+            <li><a href="../u38/index.html">Gestionar ficheros json</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Errores y Excepciones</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u39/index.html">Excepciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos, paquetes y namespaces</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u40/index.html">Módulos y paquetes</a></li>
+          
+            <li><a href="../u41/index.html">Módulos estándares: módulos de sistema</a></li>
+          
+            <li><a href="../u42/index.html">Módulos estándares: módulos matemáticos</a></li>
+          
+            <li><a href="../u43/index.html">Módulos estándares: módulos de hora y fechas</a></li>
+          
+            <li><a href="../u44/index.html">Instalación de módulos</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u45/index.html">Introducción a las funciones</a></li>
+          
+            <li><a href="../u46/index.html">Conceptos avanzados sobre funciones</a></li>
+          
+            <li><a href="../u47/index.html">Tipos especiales de funciones</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación estructurada y modular</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u48/index.html">Ejercicios con funciones</a></li>
+          
+            <li><a href="../u49/index.html">Programación estructurada y modular: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u50/index.html">Programación orientada a objetos</a></li>
+          
+            <li><a href="../u51/index.html">Conceptos avanzados de programación orientada a objetos I</a></li>
+          
+            <li><a href="../u52/index.html">Conceptos avanzados de programación orientada a objetos II</a></li>
+          
+            <li><a href="../u53/index.html">Polimorfismo, herencia y delegación</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Ejercicios programación orientada a objetos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="../u54/index.html">Programación orientadas a objetos: Ejemplo completo</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Métodos principales de cadenas">
+    <meta itemprop="description" content="Cuando creamos una cadena de caracteres estamos creando un objeto de la clase str, que tiene definido un conjunto de métodos:">
+    <meta itemprop="datePublished" content="2022-11-18T13:52:18+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="index.html" class="u-url" itemprop="url">Métodos principales de cadenas
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Cuando creamos una cadena de caracteres estamos creando un objeto de la clase <code class="language-plaintext highlighter-rouge">str</code>, que tiene definido un conjunto de métodos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cadena.capitalize    cadena.isalnum       cadena.join          cadena.rsplit
+cadena.casefold      cadena.isalpha       cadena.ljust         cadena.rstrip
+cadena.center        cadena.isdecimal     cadena.lower         cadena.split
+cadena.count         cadena.isdigit       cadena.lstrip        cadena.splitlines
+cadena.encode        cadena.isidentifier  cadena.maketrans     cadena.startswith
+cadena.endswith      cadena.islower       cadena.partition     cadena.strip
+cadena.expandtabs    cadena.isnumeric     cadena.replace       cadena.swapcase
+cadena.find          cadena.isprintable   cadena.rfind         cadena.title
+cadena.format        cadena.isspace       cadena.rindex        cadena.translate
+cadena.format_map    cadena.istitle       cadena.rjust         cadena.upper
+cadena.index         cadena.isupper       cadena.rpartition    cadena.zfill
+</code></pre></div></div>
+
+<h2 id="métodos-de-formato">Métodos de formato</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "hola, como estás?"
+&gt;&gt;&gt; print(cad.capitalize())
+Hola, como estás?
+
+&gt;&gt;&gt; cad = "Hola Mundo" 
+&gt;&gt;&gt; print(cad.lower())
+hola mundo
+
+&gt;&gt;&gt; cad = "hola mundo"
+&gt;&gt;&gt; print(cad.upper())
+HOLA MUNDO
+
+&gt;&gt;&gt; cad = "Hola Mundo"
+&gt;&gt;&gt; print(cad.swapcase())
+hOLA mUNDO
+
+&gt;&gt;&gt; cad = "hola mundo"
+&gt;&gt;&gt; print(cad.title())
+Hola Mundo
+
+&gt;&gt;&gt; print(cad.center(50))
+                    hola mundo                    
+&gt;&gt;&gt; print(cad.center(50,"="))
+====================hola mundo====================
+
+&gt;&gt;&gt; print(cad.ljust(50,"="))
+hola mundo========================================
+&gt;&gt;&gt; print(cad.rjust(50,"="))
+========================================hola mundo
+
+&gt;&gt;&gt; num = 123
+&gt;&gt;&gt; print(str(num).zfill(12))
+000000000123
+</code></pre></div></div>
+
+<h2 id="métodos-de-búsqueda">Métodos de búsqueda</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "bienvenido a mi aplicación"
+&gt;&gt;&gt; cad.count("a")
+3
+&gt;&gt;&gt; cad.count("a",16)
+2
+&gt;&gt;&gt; cad.count("a",10,16)
+1
+
+&gt;&gt;&gt; cad.find("mi")
+13
+&gt;&gt;&gt; cad.find("hola")
+-1
+
+&gt;&gt;&gt; cad.rfind("a")
+21
+</code></pre></div></div>
+
+<p>El método <code class="language-plaintext highlighter-rouge">index()</code> y <code class="language-plaintext highlighter-rouge">rindex()</code> son similares a los anteriores pero provocan una excepción <code class="language-plaintext highlighter-rouge">ValueError</code> cuando no encuentra la subcadena.</p>
+
+<h2 id="métodos-de-validación">Métodos de validación</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad.startswith("b")
+True
+&gt;&gt;&gt; cad.startswith("m")
+False
+&gt;&gt;&gt; cad.startswith("m",13)
+True
+
+&gt;&gt;&gt; cad.endswith("ción")
+True
+&gt;&gt;&gt; cad.endswith("ción",0,10)
+False
+&gt;&gt;&gt; cad.endswith("nido",0,10)
+True
+</code></pre></div></div>
+
+<p>Otras funciones de validación: <code class="language-plaintext highlighter-rouge">isalnum()</code>, <code class="language-plaintext highlighter-rouge">isalpha()</code>, <code class="language-plaintext highlighter-rouge">isdigit()</code>, <code class="language-plaintext highlighter-rouge">islower()</code>, <code class="language-plaintext highlighter-rouge">isupper()</code>, <code class="language-plaintext highlighter-rouge">isspace()</code>, <code class="language-plaintext highlighter-rouge">istitle()</code>,…</p>
+
+<h2 id="métodos-de-sustitución">Métodos de sustitución</h2>
+
+<h3 id="format"><code class="language-plaintext highlighter-rouge">format</code></h3>
+
+<p>En la unidad <strong>“Entrada y salida estándar”</strong> ya estuvimos introduciendo el concepto de formateo de la cadenas. Estuvimos viendo que hay dos métodos y vimos algunos ejemplos del <em>nuevo estilo</em> con la función predefinida <code class="language-plaintext highlighter-rouge">format()</code>.</p>
+
+<p>El uso del <a href="https://docs.python.org/3/library/string.html#string-formatting">estilo nuevo</a> es actualmente el recomendado (puedes obtener más información y ejemplos en algunos de estos enlaces: <a href="http://www.python-course.eu/python3_formatted_output.php">enlace1</a> y <a href="https://pyformat.info/">enlace2</a>) y obtiene toda su potencialidad usando el método <code class="language-plaintext highlighter-rouge">format()</code> de las cadenas. Veamos algunos ejemplos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; '{} {}'.format("a", "b")
+'a b'
+&gt;&gt;&gt; '{1} {0}'.format("a", "b")
+'b a'
+&gt;&gt;&gt; 'Coordenadas: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W')
+'Coordenadas: 37.24N, -115.81W'
+&gt;&gt;&gt; '{0:b} {1:x} {2:.2f}'.format(123, 223,12.2345)
+'1111011 df 12.23'
+&gt;&gt;&gt; '{:^10}'.format('test')
+'   test   '
+</code></pre></div></div>
+
+<h3 id="otros-métodos-de-sustitución">Otros métodos de sustitución</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; buscar = "nombre apellido"
+&gt;&gt;&gt; reemplazar_por = "Juan Pérez" 
+&gt;&gt;&gt; print ("Estimado Sr. nombre apellido:".replace(buscar, reemplazar_por)) 
+Estimado Sr. Juan Pérez:
+
+&gt;&gt;&gt; cadena = "   www.eugeniabahit.com   " 
+&gt;&gt;&gt; print(cadena.strip())
+www.eugeniabahit.com
+&gt;&gt;&gt; cadena="00000000123000000000"
+&gt;&gt;&gt; print(cadena.strip("0"))
+123
+</code></pre></div></div>
+
+<p>De forma similar <code class="language-plaintext highlighter-rouge">lstrip(["caracter"])</code> y <code class="language-plaintext highlighter-rouge">rstrip(["caracter"])</code>.</p>
+
+<h2 id="métodos-de-unión-y-división">Métodos de unión y división</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; formato_numero_factura = ("Nº 0000-0", "-0000 (ID: ", ")"
+&gt;&gt;&gt; print("275".join(formato_numero_factura))
+Nº 0000-0275-0000 (ID: 275)
+
+&gt;&gt;&gt; hora = "12:23"
+&gt;&gt;&gt; print(hora.rpartition(":"))
+('12', ':', '23')
+&gt;&gt;&gt; print(hora.partition(":"))
+('12', ':', '23')
+&gt;&gt;&gt; hora = "12:23:12"
+&gt;&gt;&gt; print(hora.partition(":"))
+('12', ':', '23:12')
+&gt;&gt;&gt; print(hora.split(":"))
+['12', '23', '12']
+&gt;&gt;&gt; print(hora.rpartition(":"))
+('12:23', ':', '12')
+&gt;&gt;&gt; print(hora.rsplit(":",1))
+['12:23', '12']
+
+
+&gt;&gt;&gt; texto = "Linea 1\nLinea 2\nLinea 3" 
+&gt;&gt;&gt; print(texto.splitlines())
+['Linea 1', 'Linea 2', 'Linea 3']
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-11-18T13:52:18+01:00">November 18, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="../u27/index.html" class="pagination--pager" title="Tipo de datos cadenas de caracteres
+">Previous</a>
+    
+    
+      <a href="../u29/index.html" class="pagination--pager" title="Ejercicios de cadenas
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="https://plataforma.josedomingo.org/pledin/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 José Domingo Muñoz. Powered by <a href="https://jekyllrb.com/" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="../../../../assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="../../../../assets/js/lunr/lunr.min.js"></script>
+<script src="../../../../assets/js/lunr/lunr-store.js"></script>
+<script src="../../../../assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+
+<!-- Mirrored from plataforma.josedomingo.org/pledin/cursos/python3/curso/u28/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 10:09:12 GMT -->
+</html>
